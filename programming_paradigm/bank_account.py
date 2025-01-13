@@ -31,7 +31,7 @@ def main():
         print("Commands: deposit, withdraw, display")
         sys.exit(1)
 
-    # Parse command and amount
+    # Parse command and parameters
     command, *params = sys.argv[1].split(':')
     amount = float(params[0]) if params else None
 
@@ -45,7 +45,7 @@ def main():
         else:
             print("Insufficient funds.")
     elif command == "display":
-        # Use `display_balance` to ensure the format matches
+        # Use `display_balance()` to return the properly formatted string
         print(account.display_balance())
     else:
         print("Invalid command.")
